@@ -4,13 +4,14 @@ import dao.RegistrationDao;
 
 import model.Login;
 import model.Party;
+import service.Emailsender;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -45,10 +46,12 @@ public class Registration extends HttpServlet {
 
 		login.setEmail(email);
 		login.setPassword(password);
-
+		
 		boolean success = false;
 		try {
 			success = RegistrationDao.saveUser(party, login);
+			Emailsender emailsender=new Emailsender();
+			emailsender.sendEmail(login);
 			RequestDispatcher requestDispatcher = req.getRequestDispatcher("login.jsp");
 			requestDispatcher.forward(req, resp);
 		} catch (SQLException e) {
