@@ -1,4 +1,3 @@
-
 <%@page import="model.Party"%>
  <%@page import="dao.SearchByPartyId"%> 
 
@@ -20,7 +19,7 @@
 			</div>
 
 			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>index.jsp"
+				<li><a href="<%=request.getContextPath()%>"
 					class="nav-link">Party</a></li>
 			</ul>
 		</nav>
@@ -34,51 +33,57 @@
 				<form action="UpdateServlet" method="Post">
 
 				<%
-					int id = Integer.parseInt(request.getParameter("id"));
-							SearchByPartyId ud = new SearchByPartyId();
+					int partyID = Integer.parseInt(request.getParameter("id"));
+							SearchByPartyId update = new SearchByPartyId();
 							
-							Party  p = ud.searchById(id);
+							Party party = update.searchById(partyID);
 				%> 
 
 					<fieldset class="form-group">
 						<label>First Name</label> <input type="text"
-							value=<%=p.getFirstName()%> class="form-control" name="firstname"
+							value=<%=party.getFirstName()%> class="form-control" name="firstname"
 							required="required">
 
 
 						<fieldset class="form-group">
 							<label>Last Name</label> <input type="text"
-								value=<%=p.getLastName()%> class="form-control" name="lastname"
+								value=<%=party.getLastName()%> class="form-control" name="lastname"
 								required="required">
 						</fieldset>
 
 						<fieldset class="form-group">
 							<label>address</label> <input type="text"
-								value="<%=p.getAddress()%>" class="form-control" name="address">
+								value="<%=party.getAddress()%>" class="form-control" name="address"
+								required="required">
 						</fieldset>
 
 						<fieldset class="form-group">
-							<label>City</label> <input type="text" value="<%=p.getCity()%>"
-								class="form-control" name="city">
+							<label>City</label> <input type="text" value="<%=party.getCity()%>"
+								class="form-control" name="city"
+								required="required">
 						</fieldset>
 						<fieldset class="form-group">
-							<label>Zip</label> <input type="text" value="<%=p.getZip()%>"
-								class="form-control" name="zip">
+							<label>Zip</label> <input type="text" value="<%=party.getZip()%>"
+								class="form-control" name="zip"
+								required="required">
 						</fieldset>
 						<fieldset class="form-group">
-							<label>State</label> <input type="text" value="<%=p.getState()%>"
-								class="form-control" name="state">
+							<label>State</label> <input type="text" value="<%=party.getState()%>"
+								class="form-control" name="state"
+								required="required">
 						</fieldset>
 						<fieldset class="form-group">
 							<label>Country</label> <input type="text"
-								value="<%=p.getCountry()%>" class="form-control" name="country">
+								value="<%=party.getCountry()%>" class="form-control" name="country"
+								required="required">
 						</fieldset>
 						<fieldset class="form-group">
-							<label>Phone</label> <input type="text" value="<%=p.getPhone()%>"
-								class="form-control" name="phone">
+							<label>Phone</label> <input type="text" value="<%=party.getPhone()%>"
+								class="form-control" name="phone"
+								required="required">
 						</fieldset>
 										<%-- <p><%=p.getPartyId() %></p> --%>
-						<button type="submit" name="Update" value=<%=id%>
+						<button type="submit" name="Update" value=<%=partyID%>
 							class="btn btn-success">Save</button>
 				</form>
 			</div>

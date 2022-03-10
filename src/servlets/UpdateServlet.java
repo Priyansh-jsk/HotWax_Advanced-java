@@ -18,24 +18,25 @@ import model.Party;
 @WebServlet("/UpdateServlet")
 public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
-		Party party=new Party();
-		boolean status=false;
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		Party party = new Party();
+		boolean status = false;
 		party.setFirstName(request.getParameter("firstname"));
 		party.setLastName(request.getParameter("lastname"));
 		party.setAddress(request.getParameter("address"));
@@ -44,15 +45,15 @@ public class UpdateServlet extends HttpServlet {
 		party.setState(request.getParameter("state"));
 		party.setCountry(request.getParameter("country"));
 		party.setPhone(request.getParameter("phone"));
-	///(request.getParameter("partyId"));
-		String id=request.getParameter("Update");
-		System.out.println(id);
-		Update update=new Update();
-	status=	update.updateParty(party, id);
-		if(status) {
-			System.out.println("status updatye");
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("profile.jsp");
-		requestDispatcher.forward(request, response);
+		// (request.getParameter("partyId"));
+		String partyID = request.getParameter("Update");
+		System.out.println(partyID);
+		Update update = new Update();
+		status = update.updateParty(party, partyID);
+		if (status) {
+			System.out.println("status update");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("profile.jsp");
+			requestDispatcher.forward(request, response);
 		}
 
 	}

@@ -11,11 +11,10 @@ import java.util.Properties;
 public class Emailsender {
 
 	 public static void sendEmail(Login login) {
-	//public static void main(String args[]) {
 		String message = "Hello, Welcome to party managaement app!!";
 		String subject = "Confirmation of mail";
 		String to = login.getEmail();
-		String from = "neemapriyansh@gmail.com";
+		String from = "********************";
 		String host = "smtp.gmail.com";
 
 		Properties properties = System.getProperties();
@@ -29,7 +28,7 @@ public class Emailsender {
 		Session session = Session.getInstance(properties, new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("neemapriyansh@gmail.com", "Neemacool2803");
+				return new PasswordAuthentication("*****************", "*********");
 			}
 		});
 
@@ -50,7 +49,6 @@ public class Emailsender {
 		try {
 			Transport.send(demoMessage);
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Email Successfully sent");

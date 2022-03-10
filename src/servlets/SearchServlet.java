@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -27,7 +28,7 @@ public class SearchServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		String value = request.getParameter("button");
 		Display display = new Display();
 		System.out.println(value);
@@ -36,7 +37,7 @@ public class SearchServlet extends HttpServlet {
 		searchOperation.setLastName(request.getParameter("lastname"));
 		ArrayList<Party> arraylist = display.display(searchOperation);
 
-		RequestDispatcher rd = request.getRequestDispatcher("Display1.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("Display.jsp");
 		request.setAttribute("Arraylist", arraylist);
 		rd.forward(request, response);
 	}

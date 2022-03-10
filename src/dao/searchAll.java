@@ -22,19 +22,19 @@ public class searchAll {
 		result = ps.executeQuery();
 		List<Party> mylist = new ArrayList<Party>();
 		while (result.next()) {
-			Party S = new Party();
-			S.setPartyId(result.getInt("partyId"));
-			S.setFirstName(result.getString("firstname"));
-			S.setLastName(result.getString("lastname"));
-			S.setAddress(result.getString("address"));
-			S.setCity(result.getString("city"));
-			S.setZip(result.getString("zip"));
-			S.setState(result.getString("state"));
-			S.setCountry(result.getString("country"));
-			S.setPhone(result.getString("phone"));
+			Party searchall = new Party();
+			searchall.setPartyId(result.getInt("partyId"));
+			searchall.setFirstName(result.getString("firstname"));
+			searchall.setLastName(result.getString("lastname"));
+			searchall.setAddress(result.getString("address"));
+			searchall.setCity(result.getString("city"));
+			searchall.setZip(result.getString("zip"));
+			searchall.setState(result.getString("state"));
+			searchall.setCountry(result.getString("country"));
+			searchall.setPhone(result.getString("phone"));
 
-			mylist.add(S);
-			S = null;
+			mylist.add(searchall);
+			searchall = null;
 		}
 		return mylist;
 

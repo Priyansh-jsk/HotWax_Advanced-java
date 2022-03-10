@@ -23,7 +23,6 @@ public class Display {
 
 		try {
 			Connection connection = DBConnection.getConnection();
-			String searchName = "select firstname, lastname from party";
 			
 			PreparedStatement ps;
 			ResultSet resultSet;

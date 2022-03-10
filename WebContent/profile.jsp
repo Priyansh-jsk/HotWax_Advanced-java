@@ -13,26 +13,6 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<script>
-	function myFunction() {
-		// Declare variables
-		var input, filter, ul, li, a, i, txtValue;
-		input = document.getElementById('mySearch');
-		filter = input.value.toUpperCase();
-		ul = document.getElementById("myMenu");
-		li = ul.getElementsByTagName('tr');
-
-		for (i = 1; i < li.length; i++) {
-			a = li[i].getElementsByTagName("td")[1];
-			txtValue = a.textContent || a.innerText;
-			if (txtValue.toUpperCase().indexOf(filter) > -1) {
-				li[i].style.display = "";
-			} else {
-				li[i].style.display = "none";
-			}
-		}
-	}
-</script>
 </head>
 
 <body>
@@ -70,18 +50,13 @@
 		<div class="container">
 			<h3 class="text-center">List of party</h3>
 			<hr>
-			<div class="container text-left">
-
-				<%-- <a href="<%=request.getContextPath()%>/registration"
-					class="btn btn-success">Add Party</a> --%>
-			</div>
 			<br>
 			<ul>
 				<table class="table table-bordered">
 
 					<tr>
 
-						<th>fisrtname</th>
+						<th>firstname</th>
 						<th>lastname</th>
 						<th>address</th>
 						<th>city</th>
@@ -111,19 +86,12 @@
 						<td><%=party.getCountry()%></td>
 						<td><%=party.getPhone()%></td>
 
-
-
 						<td><a href="EditParty.jsp?id=<%=party.getPartyId()%>" />Edit</a>
 						<td><a href="delete.jsp?id=<%=party.getPartyId()%>" />Delete</a>
 					</tr>
 					<%
 						}
 					%>
-
-
-
-
-
 
 				</table>
 			</ul>
