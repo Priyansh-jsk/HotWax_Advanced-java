@@ -25,7 +25,7 @@
 	<ul>
 		<table class="table table-bordered">
 			<tr>
-				<th>fisrtname</th>
+				<th>firstname</th>
 				<th>lastname</th>
 				<th>address</th>
 				<th>city</th>
