@@ -1,0 +1,62 @@
+body {
+	background-image: linear-gradient(to right, red, brown);
+}
+
+.classone {
+	height: 40%;
+	width: 50%;
+	position: absolute;
+	background: transparent;
+	margin-top: 10%;
+	margin-left: 25%;
+}
+.classtwo {
+	height: 40%;
+	width: 50%;
+	position: absolute;
+	background: transparent;
+	margin-top: 5%;
+	margin-left: 25%;
+}
+.max {
+	margin-left: 40%;
+}
+
+.image {
+	position: absolute;
+	margin-left: 8%;
+	margin-top: -1%;
+}
+.image2 {
+	position: absolute;
+	margin-left: 8%;
+	margin-top: 15%;
+}
+
+.image img {
+	height: 120px;
+    width: 135%;
+}
+
+.btn {
+	background: transparent;
+	border-radius: 20px;
+	padding: 10px 20px;
+	border: 1px solid white;
+	margin-left: 150%;
+	margin-top: 30%;
+	color: white;
+	font-weight: 900;
+}
+
+.btn:hover {
+	cursor: pointer;
+	background: white;
+	color: black;
+}
+
+.table-style td {
+	color: white;
+	font-weight: 900;
+	font-size: 18px;
+}
